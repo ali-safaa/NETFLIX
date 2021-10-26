@@ -4,7 +4,7 @@ import Youtube from "react-youtube"
 import movieTrailer from "movie-trailer";
 import axios from './axios';
 function Row(props) {
-    const {id, title, fetchUrl, LargeRow} = props;
+    const {title, fetchUrl, LargeRow} = props;
     const [movies, setMovies] = useState();
     const base_url = "https://image.tmdb.org/t/p/original/";
     const [trailerUrl, setTrailerUrl] = useState("")
@@ -39,7 +39,7 @@ function Row(props) {
             <h2>{title}</h2>
             <div className="row__posters">
                 {movies && movies.map(movie => (
-               <img onClick={() => handleClick(movie)} className={`row__poster ${LargeRow && "row__posterLarge"}`} src={`${base_url}${LargeRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.name} />
+               <img key={movie.id} onClick={() => handleClick(movie)} className={`row__poster ${LargeRow && "row__posterLarge"}`} src={`${base_url}${LargeRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.name} />
                 ))}
             </div>
             {trailerUrl && <Youtube videoId={trailerUrl} opts={opts}/>}
