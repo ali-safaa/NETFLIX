@@ -2,4 +2,6 @@
 ``` npm run start ```
 if dont work install
 ``` npm i ```
-## after that you can do ```npm run start ``` and will work.
+## after that you can do
+```npm run start ```
+and will work
