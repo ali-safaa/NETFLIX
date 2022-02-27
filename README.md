@@ -4,4 +4,4 @@ if dont work install
 ``` npm i ```
 ## after that you can do
 ```npm run start ```
-and will work
+ and will work
